@@ -8,6 +8,7 @@ public class BasicRobot : Robot {
     public float velocity = 100;
     public float Gamma = 0.8f;
     public bool control = true;
+    public GameObject End;
 
     public int NumIntervalls = 64;
 
@@ -134,8 +135,15 @@ public class BasicRobot : Robot {
         return 9;
     }
 
-    protected override double getReward(int state, int action, int state2)
+    /*protected override double getReward(int state, int action, int state2)
     {
         return speed;
+    }*/
+
+    protected override double getReward(int state, int action, int state2)
+    {
+        if (End.transform.position.y > 4) return End.transform.position.y - 4.0;
+        else if (End.transform.position.y < 2) return End.transform.position.y - 2.0;
+        return 0;
     }
 }
