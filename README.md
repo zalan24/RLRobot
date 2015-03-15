@@ -19,3 +19,8 @@ This project is made with Unity3D 5. If you don't have this software, you can go
   The script RLBrain.cs containes all the information that the model learns. This way you can create multiple models which help each other learn.
   Put this script on an other GameObject and set the brain parameter of the Robot objects.
   The brain has a filename as an input, this is the information is stored. (Only saves on exit)
+#4. Using
+  The Update function should be overriden the same way as in the samples. There are some variables of the Robot.cs script that are important: S,S2,A. S is the current state (calculated in the base.Update() function), S2 is the last state. To decide what is the best action, use this: A = _getAction_FunctionName_(); You an use an own function for this, but there is a default one.
+  Gamma (Robot.cs/Gamma) is used in the decision process. It can be [0;1]. 1 means that it will decide randomly, 0 means it will always do the best it can (without exploration).
+  Alpha and Beta are in the RLBrain.cs:
+  Alpha [0;1] is the importance of the old information when getting a new reward. 1 means that only the current reward matters, 0 means that the current rewars doesn't metter, only what it remembers (won't learn). Beta [0;1] is the significance of the future rewards. 1 means that the model will value the expected reward the same way as the current rewards. 0 means the expected rewards don't matter.
