@@ -142,8 +142,6 @@ public class BasicRobot : Robot {
 
     protected override double getReward(int state, int action, int state2)
     {
-        if (End.transform.position.y > 4) return End.transform.position.y - 4.0;
-        else if (End.transform.position.y < 2) return End.transform.position.y - 2.0;
-        return 0;
+        return End.transform.position.y - 2.5;
     }
 }

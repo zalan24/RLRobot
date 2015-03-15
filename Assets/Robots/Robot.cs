@@ -18,6 +18,7 @@ public class Robot : MonoBehaviour {
         S2 = S;
         S = getState();
         R = getReward(S2,A,S);
+        //Debug.Log(R);
         brain.Learn(this,S2,A,S,R);
 	}
 
