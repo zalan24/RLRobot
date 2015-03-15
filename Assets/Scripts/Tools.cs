@@ -33,7 +33,7 @@ public class Tools : MonoBehaviour {
         }
         r.x += r.width * 1.1f;
         r.width = r.width * 2;
-        GUI.Box(r, "Gamma");
+        GUI.Box(r, "Gamma\n"+Gamma);
         r.x += r.width * 1.1f;
         r.width = r.height;
         if (GUI.Button(r, "+"))

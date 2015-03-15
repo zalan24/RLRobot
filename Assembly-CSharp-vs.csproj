@@ -46,10 +46,12 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Robots\Balance\BalanceRobot.cs" />
      <Compile Include="Assets\Robots\Basic\BasicRobot.cs" />
      <Compile Include="Assets\Robots\RLBrain.cs" />
      <Compile Include="Assets\Robots\Robot.cs" />
      <Compile Include="Assets\Scripts\Follow.cs" />
+     <Compile Include="Assets\Scripts\Mainmenu.cs" />
      <Compile Include="Assets\Scripts\Tools.cs" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
