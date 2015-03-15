@@ -6,7 +6,6 @@ public class BasicRobot : Robot {
     public HingeJoint upper, lower;
     public GameObject body;
     public float velocity = 100;
-    public float Gamma = 0.8f;
     public bool control = true;
     public GameObject End;
 
@@ -93,18 +92,6 @@ public class BasicRobot : Robot {
             lower.motor = m;
         }
 	}
-
-    protected override int getAction(int state)
-    {
-        int maxa = 0;
-        int X = getActionNum(state);
-        if (Random.Range(0.0f, 1.0f) < Gamma) return Random.Range(0, X);
-        for (int i = 1; i < X; ++i)
-        {
-            if (brain.Q[state][i] > brain.Q[state][maxa]) maxa = i;
-        }
-        return maxa;
-    }
 
     int getstatex()
     {

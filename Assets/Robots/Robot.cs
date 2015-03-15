@@ -4,6 +4,7 @@ using System.Collections;
 public class Robot : MonoBehaviour {
 
     public RLBrain brain;
+    public float Gamma = 0.8f;
 
     protected int S=0, S2=0, A=0;
     protected double R=0;
@@ -44,7 +45,14 @@ public class Robot : MonoBehaviour {
 
     protected virtual int getAction(int state)
     {
-        return 0;
+        int maxa = 0;
+        int X = getActionNum(state);
+        if (Random.Range(0.0f, 1.0f) < Gamma) return Random.Range(0, X);
+        for (int i = 1; i < X; ++i)
+        {
+            if (brain.Q[state][i] > brain.Q[state][maxa]) maxa = i;
+        }
+        return maxa;
     }
 
 }
