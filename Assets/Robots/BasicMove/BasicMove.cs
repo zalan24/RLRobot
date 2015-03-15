@@ -15,6 +15,8 @@ public class BasicMove : Robot
     Vector3 lastpos = Vector3.zero;
 
     Rigidbody lowerb, upperb, bodyb;
+    Vector3 upperp, lowerp, bodyp;
+    Quaternion upperq, lowerq, bodyr;
 
     protected override void Start()
     {
@@ -22,6 +24,12 @@ public class BasicMove : Robot
         lowerb = lower.GetComponent<Rigidbody>();
         upperb = upper.GetComponent<Rigidbody>();
         bodyb = body.GetComponent<Rigidbody>();
+        upperp = upper.transform.position;
+        lowerp = lower.transform.position;
+        upperq = upper.transform.rotation;
+        lowerq = lower.transform.rotation;
+        bodyp = body.transform.position;
+        bodyr = body.transform.rotation;
     }
 
     protected override void Update()
@@ -95,11 +103,27 @@ public class BasicMove : Robot
             m.targetVelocity = velocity * (a2 - 1);
             lower.motor = m;
         }
-        if (body.transform.position.x > 200 || body.transform.position.x < -200)
+        if (body.transform.position.x > 200 || body.transform.position.x < -200 || body.transform.rotation.eulerAngles.z > 90 && body.transform.rotation.eulerAngles.z < 270)
         {
-            lastpos = new Vector3(0, 0, 0);
-            body.transform.position = lastpos;
+            Reset();
         }
+    }
+
+    void Reset()
+    {
+        lastpos = bodyp;
+        body.transform.rotation = bodyr;
+        body.transform.position = lastpos;
+        bodyb.velocity = Vector3.zero;
+        bodyb.angularVelocity = Vector4.zero;
+        upper.transform.position = upperp;
+        lower.transform.position = lowerp;
+        upper.transform.rotation = upperq;
+        lower.transform.rotation = lowerq;
+        lowerb.velocity = Vector3.zero;
+        upperb.velocity = Vector3.zero;
+        lowerb.angularVelocity = Vector3.zero;
+        upperb.angularVelocity = Vector3.zero;
     }
 
     int getstatex()
