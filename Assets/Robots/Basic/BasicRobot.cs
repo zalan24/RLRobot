@@ -11,8 +11,8 @@ public class BasicRobot : Robot {
 
     public int NumIntervalls = 64;
 
-    float speed = 0;
-    Vector3 lastpos = Vector3.zero;
+    //float speed = 0;
+    //Vector3 lastpos = Vector3.zero;
 
     Rigidbody lowerb, upperb, bodyb;
 
@@ -28,8 +28,8 @@ public class BasicRobot : Robot {
     {
         base.Update();
         int a1, a2;
-        speed = (body.transform.position.x - lastpos.x) / Time.deltaTime;
-        lastpos = body.transform.position;
+        //speed = (body.transform.position.x - lastpos.x) / Time.deltaTime;
+        //lastpos = body.transform.position;
         lowerb.WakeUp();
         upperb.WakeUp();
         bodyb.WakeUp();

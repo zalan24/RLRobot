@@ -1,8 +1,6 @@
 Base path: C:/Program Files/Unity/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-64bit-7-7668
+Pipe name: \\.\pipe\UnityShaderCompiler-64bit-7-5984
 Cmd: getPlatforms
-Cmd: compileSnippet
-  api=8 type=0 insize=7025 outsize=4323 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_ON ok=1
 Unhandled exception: Readfile from pipe failed. GLE=A pipe használata befejeződött.
 
 

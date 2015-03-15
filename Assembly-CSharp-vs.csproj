@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Robots\Balance\BalanceRobot.cs" />
      <Compile Include="Assets\Robots\Basic\BasicRobot.cs" />
+     <Compile Include="Assets\Robots\BasicMove\BasicMove.cs" />
      <Compile Include="Assets\Robots\RLBrain.cs" />
      <Compile Include="Assets\Robots\Robot.cs" />
      <Compile Include="Assets\Scripts\Follow.cs" />
