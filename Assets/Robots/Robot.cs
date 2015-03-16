@@ -5,6 +5,7 @@ public class Robot : MonoBehaviour {
 
     public RLBrain brain;
     public float Gamma = 0.8f;
+    public double K = 0;
 
     protected int S=0, S2=0, A=0;
     protected double R=0;
@@ -43,6 +44,11 @@ public class Robot : MonoBehaviour {
         return 0;
     }
 
+    protected virtual double F(double q, int n)
+    {
+        return q - n * K;
+    }
+
     protected virtual int getAction(int state)
     {
         int maxa = 0;
@@ -50,7 +56,7 @@ public class Robot : MonoBehaviour {
         if (Random.Range(0.0f, 1.0f) < Gamma) return Random.Range(0, X);
         for (int i = 1; i < X; ++i)
         {
-            if (brain.Q[state][i] > brain.Q[state][maxa]) maxa = i;
+            if (F(brain.Q[state][i], brain.Qnum[state][i]) > F(brain.Q[state][maxa], brain.Qnum[state][maxa])) maxa = i;
         }
         return maxa;
     }

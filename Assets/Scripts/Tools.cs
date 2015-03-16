@@ -8,10 +8,12 @@ public class Tools : MonoBehaviour {
     public float step = 0.05f;
 
     float Gamma = 0;
+    float  K = 0;
 
 	void Start () {
         if (robots.Length == 0) Destroy(gameObject);
         Gamma = robots[0].Gamma;
+        K = (float)robots[0].K;
 	}
 	
 	void OnGUI () {
@@ -43,6 +45,30 @@ public class Tools : MonoBehaviour {
             foreach (Robot ro in robots)
             {
                 ro.Gamma = Gamma;
+            }
+        }
+        r.x += r.width*2;
+        if (GUI.Button(r, "-"))
+        {
+            K -= step;
+            if (K < 0) K = 0;
+            foreach (Robot ro in robots)
+            {
+                ro.K = K;
+            }
+        }
+        r.x += r.width * 1.1f;
+        r.width = r.width * 2;
+        GUI.Box(r, "K\n" + K);
+        r.x += r.width * 1.1f;
+        r.width = r.height;
+        if (GUI.Button(r, "+"))
+        {
+            K += step;
+            if (K > 1) K = 1;
+            foreach (Robot ro in robots)
+            {
+                ro.K = K;
             }
         }
 	}

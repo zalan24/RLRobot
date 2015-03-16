@@ -10,17 +10,10 @@ public class RLBrain : MonoBehaviour {
     public double Beta = 1.0;
     public string Filename = "RLBrain.txt";
     public int numstepsbeforelearn = 100;
-    public double K = 1;
 
     bool inited = false;
     string readstring = "";
     int readn = 0;
-
-    double F(double q, int n)
-    {
-        //if (n == 0) return 100000000000;
-        return q + K / n;
-    }
 
     struct LearnInput
     {
@@ -64,7 +57,7 @@ public class RLBrain : MonoBehaviour {
             for (int j = 0; j < Y; ++j)
             {
                 Q[i][j] = 0;
-                Qnum[i][j] = 1;
+                Qnum[i][j] = 0;
             }
         }
         Load();
@@ -125,7 +118,7 @@ public class RLBrain : MonoBehaviour {
             S = "";
             for (int j = 0; j < Q[i].Length; ++j)
             {
-                S += Q[i][j] + " ";
+                S += Q[i][j] + " " + Qnum[i][j] + " ";
             }
             sr.WriteLine(S);
         }
@@ -169,6 +162,7 @@ public class RLBrain : MonoBehaviour {
             if (y == Q[i].Length) for (int j = 0; j < y; ++j)
             {
                 Q[i][j] = ReadNumber(sr);
+                Qnum[i][j] = (int)ReadNumber(sr);
             }
         }
         sr.Close();

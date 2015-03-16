@@ -49,6 +49,11 @@
      <Compile Include="Assets\Robots\Balance\BalanceRobot.cs" />
      <Compile Include="Assets\Robots\Basic\BasicRobot.cs" />
      <Compile Include="Assets\Robots\BasicMove\BasicMove.cs" />
+     <Compile Include="Assets\Robots\FollowLine\FollowLine.cs" />
+     <Compile Include="Assets\Robots\FollowLine\Platform.cs" />
+     <Compile Include="Assets\Robots\FollowLine\Sensor.cs" />
+     <Compile Include="Assets\Robots\FollowLine\Sensors\ColorSensor.cs" />
+     <Compile Include="Assets\Robots\FollowLine\WayPoint.cs" />
      <Compile Include="Assets\Robots\RLBrain.cs" />
      <Compile Include="Assets\Robots\Robot.cs" />
      <Compile Include="Assets\Scripts\Follow.cs" />
