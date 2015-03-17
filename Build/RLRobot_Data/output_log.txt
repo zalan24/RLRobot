@@ -14,18 +14,18 @@ Platform assembly: F:\Documents\Hobby\RLRobotTest\Build\RLRobot_Data\Managed\Ass
 Loading F:\Documents\Hobby\RLRobotTest\Build\RLRobot_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: F:\Documents\Hobby\RLRobotTest\Build\RLRobot_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading F:\Documents\Hobby\RLRobotTest\Build\RLRobot_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  1.032 seconds
+- Completed reload, in  0.039 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
 Platform assembly: F:\Documents\Hobby\RLRobotTest\Build\RLRobot_Data\Managed\System.Core.dll (this message is harmless)
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 22b4 -> priority: 1 
-  Thread -> id: 1c24 -> priority: 1 
+  Thread -> id: 3038 -> priority: 1 
+  Thread -> id: 3304 -> priority: 1 
 Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.482821 ms
+UnloadTime: 0.276264 ms
 
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 355.
-Total: 0.166357 ms (FindLiveObjects: 0.020099 ms CreateObjectMapping: 0.014540 ms MarkObjects: 0.122736 ms  DeleteObjects: 0.008125 ms)
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 700.
+Total: 0.220669 ms (FindLiveObjects: 0.044476 ms CreateObjectMapping: 0.014112 ms MarkObjects: 0.150961 ms  DeleteObjects: 0.009836 ms)
 
