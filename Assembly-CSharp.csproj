@@ -46,6 +46,9 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Robots\AdBalance\AdvancedBalance.cs" />
+     <Compile Include="Assets\Robots\AdvancedBrain.cs" />
+     <Compile Include="Assets\Robots\AdvancedRobot.cs" />
      <Compile Include="Assets\Robots\Balance\BalanceRobot.cs" />
      <Compile Include="Assets\Robots\Basic\BasicRobot.cs" />
      <Compile Include="Assets\Robots\BasicMove\BasicMove.cs" />
